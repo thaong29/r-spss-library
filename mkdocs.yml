@@ -1,0 +1,62 @@
+site_name: thaos Library
+site_url: ""
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - header.autohide
+    - toc.follow
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: Dunkelmodus aktivieren
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: Hellmodus aktivieren
+
+nav:
+  - Home: index.md
+  - Posts: blog/index.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+
+plugins:
+  - search
+  - blog:
+      blog_toc: true
+      blog_dir: blog
+
+      tags:
+        enable: true
+
+      include_drafts: false
+
+      authors: true
+      archive_date_format: MMMM yyyy
+  - glightbox
+
