@@ -1,4 +1,3 @@
 # Posts
 
-## Latest Posts
 

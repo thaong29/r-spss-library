@@ -36,9 +36,14 @@ nav:
   - Posts: blog/index.md
 
 markdown_extensions:
-  - admonition
+
+  - codehilite:
+      guess_lang: false
   - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.superfences
+  - pymdownx.highlight
+  - admonition
   - toc:
       permalink: true
   - attr_list

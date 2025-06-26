@@ -1,18 +1,18 @@
 ---
-title: Descriptive Statistics with SPSS
+title: Deskriptive Statistik mit SPSS
 date: 2025-06-23
 authors:
   - thao-nguyen
-summary: "Basics of descriptive statistics in SPSS: Frequencies, summary measures, and charts."
+summary: "Grundlagen der deskriptiven Statistik in SPSS: Häufigkeiten, Kennwerte und Diagramme."
 tags:
   - SPSS
-  - Statistics
-  - Descriptive
+  - Statistik
+  - Deskriptiv
 ---
 
-An introduction to descriptive analysis in SPSS, including frequency tables, summary statistics (mean, SD, median), and simple visualizations using the GUI.
+Eine Einführung in die deskriptive Datenanalyse mit SPSS, inklusive Häufigkeitstabellen, statistischer Kennwerte (Mittelwert, SD, Median) und einfacher Visualisierungen über die grafische Benutzeroberfläche.
 
-Data analysis typically begins with descriptive statistics. The goal is to summarize and present data using tables, numerical measures, and visualizations.
+Datenanalysen beginnen in der Regel mit der deskriptiven Statistik. Ziel ist es, die Daten mithilfe von Tabellen, numerischen Maßzahlen und Grafiken übersichtlich darzustellen und erste Einsichten zu gewinnen.
 
 <figure markdown="span">
   ![cover](assets/descriptive_statistics/cover.png){ width="600" }
@@ -21,63 +21,69 @@ Data analysis typically begins with descriptive statistics. The goal is to summa
 
 <!-- more -->
 
-## Performing Descriptive Statistics in SPSS
+## Durchführung der deskriptiven Statistik in SPSS
 
-To gain initial insights into your data, SPSS offers several descriptive analysis tools. Below are some key steps.
+Um erste Einblicke in deine Daten zu gewinnen, bietet SPSS verschiedene Werkzeuge für die deskriptive Analyse. Hier sind einige wichtige Schritte:
 
+---
 
+### 1. Häufigkeitstabellen n (%) für kategoriale Variablen
 
-### 1. Frequency Tables n (%) for Categorical Variables
+Für nominal- oder ordinalskalierte Variablen (z. B. Geschlecht, Diagnosekategorie) eignen sich Häufigkeitstabellen:
 
-For nominal or ordinal variables (e.g., gender, diagnosis category), frequency tables are ideal:
-
-**Procedure:**
-- Menu: `Analyze` → `Descriptive Statistics` → `Frequencies`
-- Select your variable(s)
+**Vorgehen:**
+- Menü: `Analysieren` → `Deskriptive Statistiken` → `Häufigkeiten`
+- Wähle die gewünschte(n) Variable(n) aus
 
 ![Häufigkeitstabelle](assets/descriptive_statistics/haeufigkeit.png){ align=center }
 /// caption
-Figure 1: Example of a frequency table
+Abbildung 1: Beispiel einer Häufigkeitstabelle
 ///
 
-### 2. Min., Max. and mean(SD) for Metric Variables
+---
 
-For interval or ratio-scaled variables (e.g., age, blood pressure), you can calculate the mean, median, standard deviation, etc.:
+### 2. Min., Max. und Mittelwert (SD) für metrische Variablen
 
-**Procedure:**
-- Menu: `Analyze` → `Descriptive Statistics` → `Descriptives`
-- Select your variable(s)
-- Click `Options` → choose statistics (e.g., Mean, Min, Max, SD)
+Für intervall- oder verhältnisskalierte Variablen (z. B. Alter, Blutdruck) kannst du Kennwerte wie Mittelwert, Median und Standardabweichung berechnen:
 
-![Metrictable](assets/descriptive_statistics/metric_table.png){ align=center }
+**Vorgehen:**
+- Menü: `Analysieren` → `Deskriptive Statistiken` → `Deskriptive Statistiken`
+- Wähle die gewünschte(n) Variable(n) aus
+- Klicke auf `Optionen` → wähle die gewünschten Kennwerte (z. B. Mittelwert, Min, Max, SD)
+
+![Metriktabelle](assets/descriptive_statistics/metric_table.png){ align=center }
 /// caption
-Figure 2: Example of a table for metric variables
+Abbildung 2: Beispiel einer Tabelle für metrische Variablen
 ///
 
-### 3. Exploratory Overview with `Explore`
+---
 
-If you want to analyze multiple variables and compare groups:
+### 3. Explorative Analyse mit `Explore`
 
-**Procedure:**
-- Menu: `Analyze` → `Descriptive Statistics` → `Explore`
-- Assign variables to “Dependent List”
-- Grouping variable to “Factor List”
+Wenn du mehrere Variablen analysieren und nach Gruppen vergleichen möchtest:
 
-**Result:**  
-SPSS generates boxplots, normal distribution plots, and grouped summary statistics.
+**Vorgehen:**
+- Menü: `Analysieren` → `Deskriptive Statistiken` → `Explore`
+- Variablen in „Abhängige Liste“ ziehen
+- Gruppierungsvariable in „Faktorliste“ einfügen
 
-### 4. Charts for Visualization
+**Ergebnis:**  
+SPSS erstellt Boxplots, Diagramme zur Normalverteilung und gruppierte Kennwerte.
 
-Charts complement tabular results. Common visualizations include:
+---
 
-- **Bar Chart** – for categorical variables  
-- **Histogram** – for metric variables  
-- **Boxplot** – for group comparisons
+### 4. Diagramme zur Visualisierung
 
-**Procedure:**
-- Menu: `Graphs` → choose chart type → assign variables → create chart
+Diagramme ergänzen tabellarische Ausgaben und erleichtern das Verständnis. Gängige Visualisierungen sind:
 
-![boxplot](assets/descriptive_statistics/boxplot.png){ align=center }
+- **Balkendiagramm** – für kategoriale Variablen  
+- **Histogramm** – für metrische Variablen  
+- **Boxplot** – für Gruppenvergleiche
+
+**Vorgehen:**
+- Menü: `Diagramme` → Diagrammtyp wählen → Variablen zuordnen → Diagramm erstellen
+
+![Boxplot](assets/descriptive_statistics/boxplot.png){ align=center }
 /// caption
-Figure 3: Example of a Boxplot
+Abbildung 3: Beispiel eines Boxplots
 ///
