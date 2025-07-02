@@ -34,7 +34,7 @@ theme:
 nav:
   - Home: index.md
   - Posts: blog/index.md
-
+  - About: about.md
 markdown_extensions:
 
   - codehilite:

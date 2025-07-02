@@ -1,3 +1,6 @@
 # Home
 
-I've decided to start documenting the things I figure out – as a reminder for myself and maybe a help for others.
+## Willkommen!
+
+Hier sammle ich alles, was ich beim Googlen und Ausprobieren gelernt hab - als Erinnerung für mich selbst und vielleicht als Hilfe für andere.
+

@@ -3,13 +3,14 @@ title: forestplots mit R für Hazarad Ratios
 date: 2025-06-22
 authors:
   - thao-nguyen
+draft: true
 summary: forestplot
 tags:
   - SPSS
   - Statistik
 ---
 
-```{r}
+```r 
 # data labels + significance 
 data <- data %>%
   mutate(
