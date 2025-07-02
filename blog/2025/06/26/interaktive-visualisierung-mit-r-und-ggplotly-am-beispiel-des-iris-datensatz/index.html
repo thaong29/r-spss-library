@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../24/t-tests-mit-spss/">
+        <link rel="prev" href="../../25/matching/">
       
-      
-        <link rel="next" href="../../26/interaktive-visualisierung-mit-r-und-ggplotly-am-beispiel-des-iris-datensatz/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Matching - thaos Library</title>
+        <title>Interaktive Visualisierung mit R und ggplotly am Beispiel des Iris-Datensatz - thaos Library</title>
       
     
     
@@ -81,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arten-des-matchings" class="md-skip">
+        <a href="#setup" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Matching
+              Interaktive Visualisierung mit R und ggplotly am Beispiel des Iris-Datensatz
             
           </span>
         </div>
@@ -399,44 +397,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#arten-des-matchings" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Arten des Matchings
+      Setup
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Arten des Matchings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-exact-matching" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Exact Matching
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-propensity-score-matching-psm" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Propensity Score Matching (PSM)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-mahalanobis-matching" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Mahalanobis Matching
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -496,7 +461,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-06-25 00:00:00+00:00" class="md-ellipsis">June 25, 2025</time>
+                        <time datetime="2025-06-26 00:00:00+00:00" class="md-ellipsis">June 26, 2025</time>
                       </div>
                     </li>
                     
@@ -532,34 +497,35 @@
 
 
 
-  <h1>Matching</h1>
+  <h1>Interaktive Visualisierung mit R und ggplotly am Beispiel des Iris-Datensatz</h1>
 
-<p>Matching ist eine Methode zur Kontrolle von Confounding in Beobachtungsstudien, bei der Versuchspersonen aus verschiedenen Gruppen anhand bestimmter Kovariaten gepaart oder ausgewählt werden.</p>
-<p>Ziel: Vergleichbarkeit zwischen Gruppen erhöhen (z. B. Behandlungs- vs. Kontrollgruppe), um kausale Effekte besser abschätzen zu können.</p>
-<p>Typische Anwendung: In retrospektiven Kohortenstudien oder Fall-Kontroll-Studien.</p>
+<p>Mit Plotly werden Grafiken interaktiv: Zoomen, Verschieben und detaillierte Infos per Hover der Daten werden ermöglicht.</p>
+<iframe src="/blog/posts/r/ggplotly/mein_plot.html" width="100%" height="400px" frameborder="0"></iframe>
+
 <!-- more -->
 
-<hr />
-<h2 id="arten-des-matchings">Arten des Matchings<a class="headerlink" href="#arten-des-matchings" title="Permanent link">&para;</a></h2>
-<h3 id="1-exact-matching">1. <strong>Exact Matching</strong><a class="headerlink" href="#1-exact-matching" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Beobachtungen werden nur gepaart, wenn alle Matching-Variablen exakt übereinstimmen.</li>
-<li>Vorteil: Sehr genaue Kontrolle.</li>
-<li>Nachteil: Viele Beobachtungen bleiben ungematcht → Verlust von Daten.</li>
-</ul>
-<h3 id="2-propensity-score-matching-psm">2. <strong>Propensity Score Matching (PSM)</strong><a class="headerlink" href="#2-propensity-score-matching-psm" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Berechnet für jede Person die Wahrscheinlichkeit, einer Gruppe (z. B. Behandlung) zugeordnet zu werden, basierend auf Kovariaten.</li>
-<li>Danach werden Individuen mit ähnlichem Score gematcht (z. B. nearest neighbor).</li>
-<li>Vorteil: Flexibler und breiter anwendbar.</li>
-<li>Tools: R (<code>MatchIt</code>, <code>twang</code>), SPSS (via Extension Bundles oder manuell mit PS-Berechnung).</li>
-</ul>
-<h3 id="3-mahalanobis-matching">3. <strong>Mahalanobis Matching</strong><a class="headerlink" href="#3-mahalanobis-matching" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Abstand zweier Beobachtungen wird basierend auf Kovariaten und ihrer Korrelation berechnet.</li>
-<li>Meist in Kombination mit Propensity Score verwendet.</li>
-</ul>
-<hr />
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>Wir verwenden den <code>iris</code>-Datensatz und visualisieren eine Hauptkomponentenanalyse (PCA) mit <strong>Plotly</strong> für Interaktivität.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Notwendige Pakete laden</span>
+<span class="n">pacman</span><span class="o">::</span><span class="nf">p_load</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span><span class="w"> </span><span class="n">ggplot2</span><span class="p">,</span><span class="w"> </span><span class="n">plotly</span><span class="p">)</span>
+
+<span class="c1"># Daten vorbereiten</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+<span class="n">iris_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iris</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span><span class="w">  </span>
+<span class="c1"># PCA durchführen</span>
+<span class="n">pca</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="n">iris_data</span><span class="p">,</span><span class="w"> </span><span class="n">scale.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1"># als Data Frame</span>
+<span class="n">pca_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">Species</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="p">)</span>
+
+<span class="c1"># ggplot - Objekt abspeichern</span>
+<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PC1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PC2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.8</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PCA der Iris-Daten&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hauptkomponente 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hauptkomponente 2&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span>
+
+<span class="c1"># hier mit ggplotly p aufrufen - das erstellt den interaktiven Plot</span>
+<span class="nf">ggplotly</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
 
 
 
