@@ -12,6 +12,8 @@
         <link rel="prev" href="..">
       
       
+        <link rel="next" href="../about/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -246,6 +248,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -389,9 +410,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#forestplots-mit-r-fur-hazarad-ratios" class="md-nav__link">
+  <a href="#kleine-sammlung-von-coolen-mkdocs-features" class="md-nav__link">
     <span class="md-ellipsis">
-      forestplots mit R für Hazarad Ratios
+      Kleine Sammlung von coolen mkdocs Features
     </span>
   </a>
   
@@ -401,6 +422,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -459,9 +502,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#forestplots-mit-r-fur-hazarad-ratios" class="md-nav__link">
+  <a href="#kleine-sammlung-von-coolen-mkdocs-features" class="md-nav__link">
     <span class="md-ellipsis">
-      forestplots mit R für Hazarad Ratios
+      Kleine Sammlung von coolen mkdocs Features
     </span>
   </a>
   
@@ -635,7 +678,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2025-06-22 00:00:00+00:00">June 22, 2025</time></li>
+          <time datetime="2025-06-12 00:00:00+00:00">June 12, 2025</time></li>
         
         
           
@@ -650,62 +693,32 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="forestplots-mit-r-fur-hazarad-ratios"><a class="toclink" href="2025/06/22/forestplots-mit-r-f%C3%BCr-hazarad-ratios/">forestplots mit R für Hazarad Ratios</a></h2>
-<div class="highlight"><pre><span></span><code># data labels + significance 
-data &lt;- data %&gt;%
-  mutate(
-    varname = factor(varname, levels = rev(varname)),  #sonst sortiert ggplot2 coord_flip() die y-achse alphabetisch
-    signif_label = ifelse(`p-value` &lt; 0.05, &quot;significant&quot;, &quot;Not significant&quot;),
-         `HR [95% CI]` = sprintf(&quot;%.2f [%.2f – %.2f]&quot;, `Hazard Ratio`, conf.low, conf.high))
-data$signif_label &lt;- as.factor(data$signif_label)
-#data$` ` &lt;- paste(rep(&quot; &quot;, 20), collapse = &quot; &quot;)
-
-
-
-# datatable
-table_data &lt;- data.frame(
-  `HR [95% CI]`= data$`HR [95% CI]`,
-  Cutpoint = data$cutpoint,
-  `p-value` = data$`p-value`
-)
-colnames(table_data) &lt;- c(&quot;HR [95% CI]&quot;, &quot;Cutpoint&quot;, &quot;p-value&quot;)  
-
-table_grob &lt;- tableGrob(table_data, rows = NULL, theme = ttheme_minimal(), heights = unit(c(rep(0.633,42)), &quot;cm&quot;))
-
-# forestplot
-plot &lt;- ggplot(data, aes(x = varname,
-                         y = `Hazard Ratio`,
-                         ymin = conf.low, ymax = conf.high)) +
-  geom_pointrange(aes(color = signif_label), size = 0.5) +
-  geom_hline(yintercept = 1, linetype = &quot;dashed&quot;, color = &quot;grey40&quot;) +
-  coord_flip() +
-  theme_bw() +
-  labs(title = &quot; &quot;,
-       x = NULL, y = &quot; &quot;,
-       color = &quot;Significance&quot;) +
-  theme(
-    panel.grid = element_blank(),
-
-    axis.ticks.y = element_blank(),
-    axis.text = element_text(size = 10),
-    axis.title = element_text(size = 12),
-    plot.title = element_text(hjust = 0.5),
-    legend.position = &quot;top&quot;
-  ) +
-  scale_color_manual(values = c(&quot;significant&quot; = &quot;red&quot;, &quot;Not significant&quot; = &quot;black&quot;))
-
-plot_grob &lt;- ggplotGrob(plot)
-
-main_title &lt;- textGrob(&quot;Hazard Ratios [95% CI] &quot;, gp = gpar(fontsize = 14, fontface = &quot;bold&quot;))
-
-grid.arrange(
-  plot_grob,
-  table_grob,
-  ncol = 2,
-  widths = c(1, 0.5),
-  top = main_title
-)
+    <h2 id="kleine-sammlung-von-coolen-mkdocs-features"><a class="toclink" href="2025/06/12/sammlung-von-mkdocs-features/">Kleine Sammlung von coolen mkdocs Features</a></h2>
+<p>Ein paar hilfreiche features - besonders nützlich, beim Erstellen von Posts mit <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
+<h3 id="admonitions"><a class="toclink" href="2025/06/12/sammlung-von-mkdocs-features/#admonitions">Admonitions</a></h3>
+<p>Zum Hervorheben von Mitteilungen, Warnungen, Zitate etc..</p>
+<p>Z.B.: 
+<div class="highlight"><span class="filename">Notes</span><pre><span></span><code>!!!<span class="w"> </span>note<span class="w"> </span><span class="s2">&quot;Tipp&quot;</span>
+<span class="w">    </span>Codebeispiele<span class="w"> </span>oder<span class="w"> </span>Tipps<span class="w"> </span>hervorheben
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Tipp</p>
+<p>Codebeispiele oder Tipps hervorheben</p>
+</div>
+<div class="highlight"><span class="filename">Warnung</span><pre><span></span><code>!!!<span class="w"> </span>warning<span class="w"> </span><span class="s2">&quot;Achtung&quot;</span>
+<span class="w">    </span>Warnung<span class="w"> </span>anzeigen
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Achtung</p>
+<p>Warnung anzeigen</p>
+</div>
+
+    
+      <nav class="md-post__action">
+        <a href="2025/06/12/sammlung-von-mkdocs-features/">
+          Continue reading
+        </a>
+      </nav>
     
   </div>
 </article>

@@ -18,7 +18,7 @@
     
     
       
-        <title>forestplots mit R für Hazarad Ratios - thaos Library</title>
+        <title>Sammlung von mkdocs Features - thaos Library</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#kleine-sammlung-von-coolen-mkdocs-features" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              forestplots mit R für Hazarad Ratios
+              Sammlung von mkdocs Features
             
           </span>
         </div>
@@ -241,6 +246,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -324,6 +348,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -343,6 +389,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -398,7 +463,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-06-22 00:00:00+00:00" class="md-ellipsis">June 22, 2025</time>
+                        <time datetime="2025-06-12 00:00:00+00:00" class="md-ellipsis">June 12, 2025</time>
                       </div>
                     </li>
                     
@@ -434,63 +499,52 @@
 
 
 
-  <h1>forestplots mit R für Hazarad Ratios</h1>
-
-<div class="highlight"><pre><span></span><code># data labels + significance 
-data &lt;- data %&gt;%
-  mutate(
-    varname = factor(varname, levels = rev(varname)),  #sonst sortiert ggplot2 coord_flip() die y-achse alphabetisch
-    signif_label = ifelse(`p-value` &lt; 0.05, &quot;significant&quot;, &quot;Not significant&quot;),
-         `HR [95% CI]` = sprintf(&quot;%.2f [%.2f – %.2f]&quot;, `Hazard Ratio`, conf.low, conf.high))
-data$signif_label &lt;- as.factor(data$signif_label)
-#data$` ` &lt;- paste(rep(&quot; &quot;, 20), collapse = &quot; &quot;)
-
-
-
-# datatable
-table_data &lt;- data.frame(
-  `HR [95% CI]`= data$`HR [95% CI]`,
-  Cutpoint = data$cutpoint,
-  `p-value` = data$`p-value`
-)
-colnames(table_data) &lt;- c(&quot;HR [95% CI]&quot;, &quot;Cutpoint&quot;, &quot;p-value&quot;)  
-
-table_grob &lt;- tableGrob(table_data, rows = NULL, theme = ttheme_minimal(), heights = unit(c(rep(0.633,42)), &quot;cm&quot;))
-
-# forestplot
-plot &lt;- ggplot(data, aes(x = varname,
-                         y = `Hazard Ratio`,
-                         ymin = conf.low, ymax = conf.high)) +
-  geom_pointrange(aes(color = signif_label), size = 0.5) +
-  geom_hline(yintercept = 1, linetype = &quot;dashed&quot;, color = &quot;grey40&quot;) +
-  coord_flip() +
-  theme_bw() +
-  labs(title = &quot; &quot;,
-       x = NULL, y = &quot; &quot;,
-       color = &quot;Significance&quot;) +
-  theme(
-    panel.grid = element_blank(),
-
-    axis.ticks.y = element_blank(),
-    axis.text = element_text(size = 10),
-    axis.title = element_text(size = 12),
-    plot.title = element_text(hjust = 0.5),
-    legend.position = &quot;top&quot;
-  ) +
-  scale_color_manual(values = c(&quot;significant&quot; = &quot;red&quot;, &quot;Not significant&quot; = &quot;black&quot;))
-
-plot_grob &lt;- ggplotGrob(plot)
-
-main_title &lt;- textGrob(&quot;Hazard Ratios [95% CI] &quot;, gp = gpar(fontsize = 14, fontface = &quot;bold&quot;))
-
-grid.arrange(
-  plot_grob,
-  table_grob,
-  ncol = 2,
-  widths = c(1, 0.5),
-  top = main_title
-)
+<h1 id="kleine-sammlung-von-coolen-mkdocs-features">Kleine Sammlung von coolen mkdocs Features<a class="headerlink" href="#kleine-sammlung-von-coolen-mkdocs-features" title="Permanent link">&para;</a></h1>
+<p>Ein paar hilfreiche features - besonders nützlich, beim Erstellen von Posts mit <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
+<h2 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Permanent link">&para;</a></h2>
+<p>Zum Hervorheben von Mitteilungen, Warnungen, Zitate etc..</p>
+<p>Z.B.: 
+<div class="highlight"><span class="filename">Notes</span><pre><span></span><code>!!!<span class="w"> </span>note<span class="w"> </span><span class="s2">&quot;Tipp&quot;</span>
+<span class="w">    </span>Codebeispiele<span class="w"> </span>oder<span class="w"> </span>Tipps<span class="w"> </span>hervorheben
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Tipp</p>
+<p>Codebeispiele oder Tipps hervorheben</p>
+</div>
+<div class="highlight"><span class="filename">Warnung</span><pre><span></span><code>!!!<span class="w"> </span>warning<span class="w"> </span><span class="s2">&quot;Achtung&quot;</span>
+<span class="w">    </span>Warnung<span class="w"> </span>anzeigen
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Achtung</p>
+<p>Warnung anzeigen</p>
+</div>
+<!-- more -->
+
+<p><code>success</code></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>ABC</p>
+</div>
+<p><code>failure</code></p>
+<div class="admonition failure">
+<p class="admonition-title">failure</p>
+<p>ABC</p>
+</div>
+<p><code>bug</code></p>
+<div class="admonition bug">
+<p class="admonition-title">bug</p>
+<p>ABC</p>
+</div>
+<p><code>danger</code></p>
+<div class="admonition danger">
+<p class="admonition-title">danger</p>
+<p>ABC</p>
+</div>
+<p><code>quote</code></p>
+<div class="admonition quote">
+<p class="admonition-title">quote</p>
+<p>ABC</p>
+</div>
 
 
 
