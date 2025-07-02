@@ -9,8 +9,6 @@ tags:
   - Statistics
 ---
 
-## Einführung
-
 Matching ist eine Methode zur Kontrolle von Confounding in Beobachtungsstudien, bei der Versuchspersonen aus verschiedenen Gruppen anhand bestimmter Kovariaten gepaart oder ausgewählt werden.
 
 Ziel: Vergleichbarkeit zwischen Gruppen erhöhen (z. B. Behandlungs- vs. Kontrollgruppe), um kausale Effekte besser abschätzen zu können.
