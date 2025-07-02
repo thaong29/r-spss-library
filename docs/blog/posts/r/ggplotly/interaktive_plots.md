@@ -12,7 +12,9 @@ tags:
 
 Mit Plotly werden Grafiken interaktiv: Zoomen, Verschieben und detaillierte Infos per Hover der Daten werden ermöglicht.
 
-<iframe src="/blog/posts/r/ggplotly/mein_plot.html" width="100%" height="400px" frameborder="0"></iframe>
+<body> 
+  <center> <iframe src ="/blog/posts/r/ggplotly/mein_plot.html" height = "400px" width ="100%" frameBorder ="0"></iframe> </center>
+</body>
 
 <!-- more -->
 
